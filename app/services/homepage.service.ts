@@ -4,6 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/operator/delay';
 import 'rxjs/operator/mergeMap';
 import 'rxjs/operator/switchMap';
+import 'rxjs/Rx';
 @Injectable()
 export class HomeService{
     constructor(private http:Http){

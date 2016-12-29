@@ -5,7 +5,9 @@ import 'rxjs/add/operator/map';
 import 'rxjs/operator/delay';
 import 'rxjs/operator/mergeMap';
 import 'rxjs/operator/switchMap';
-import { Observable } from 'rxjs/Rx';
+//import { Observable } from 'rxjs/Rx';
+import {Observable} from 'rxjs';
+import 'rxjs/Rx';
 @Injectable()
 export class PostService {
     constructor(private http: Http) {

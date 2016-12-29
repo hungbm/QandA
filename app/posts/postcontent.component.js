@@ -55,7 +55,6 @@ System.register(['angular2/core', '../services/homepage.service', '../services/p
                         _this.answers = responseData.answers;
                         console.log(_this.answers);
                     }, function (error) { return console.error(error); } //Failure
-                     //Failure
                     );
                     // get content of Answer
                 };
@@ -75,7 +74,6 @@ System.register(['angular2/core', '../services/homepage.service', '../services/p
                         console.error(error);
                         _this.isLoading = false;
                     } //Failure
-                     //Failure
                     );
                     document.getElementById("commentForm").reset();
                 };

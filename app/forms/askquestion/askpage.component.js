@@ -44,7 +44,6 @@ System.register(['angular2/core', '../../services/askpage.service', '../../stati
                     }, //Success
                     function (//Success
                         error) { return console.error(error); } //Failure
-                     //Failure
                     );
                 };
                 AskPageComponent = __decorate([

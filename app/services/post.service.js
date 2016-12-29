@@ -1,4 +1,4 @@
-System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxjs/operator/delay', 'rxjs/operator/mergeMap', 'rxjs/operator/switchMap', 'rxjs/Rx'], function(exports_1, context_1) {
+System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxjs/operator/delay', 'rxjs/operator/mergeMap', 'rxjs/operator/switchMap', 'rxjs', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var http_1, core_1, Rx_1;
+    var http_1, core_1, rxjs_1;
     var PostService;
     return {
         setters:[
@@ -24,9 +24,10 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxj
             function (_2) {},
             function (_3) {},
             function (_4) {},
-            function (Rx_1_1) {
-                Rx_1 = Rx_1_1;
-            }],
+            function (rxjs_1_1) {
+                rxjs_1 = rxjs_1_1;
+            },
+            function (_5) {}],
         execute: function() {
             PostService = (function () {
                 function PostService(http) {
@@ -43,7 +44,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxj
                         var responseData = response.json();
                         return responseData;
                     })
-                        .catch(function (error) { return Rx_1.Observable.throw(error.json()); });
+                        .catch(function (error) { return rxjs_1.Observable.throw(error.json()); });
                 };
                 PostService.prototype.submitAnswer = function (answer, questionID) {
                     this.answer.push(answer);
@@ -52,7 +53,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map', 'rxj
                     var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
                     return this.http.post('/post/api/' + questionID, body, { headers: headers }) //set up Observable and return this when function called
                         .map(function (response) { return response.json(); })
-                        .catch(function (error) { return Rx_1.Observable.throw(error); });
+                        .catch(function (error) { return rxjs_1.Observable.throw(error); });
                 };
                 PostService = __decorate([
                     core_1.Injectable(), 

@@ -1,9 +1,9 @@
-
-
 import {Injectable} from 'angular2/core';
 import {Http, Headers,Response} from 'angular2/http';
 import {User} from '../static_type/user.model';
-import {Observable} from 'rxjs/Rx';
+//import {Observable} from 'rxjs/Rx';
+import {Observable} from 'rxjs';
+import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/operator/delay';
 import 'rxjs/operator/mergeMap';
@@ -18,7 +18,6 @@ export class UsersService{
         return this.http.get('/listuser/api')
             .map(res => res.json());
     }
-
     signup(user: User){
         const body = JSON.stringify(user);
         const headers = new Headers({'Content_type': 'application/json'});
@@ -26,6 +25,4 @@ export class UsersService{
             .map((response: Response) => response.json())
             .catch((error: Response) => Observable.throw(error.json()));
     }
-
-
 }

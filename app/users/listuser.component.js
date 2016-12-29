@@ -29,7 +29,6 @@ System.register(['angular2/core', 'angular2/http', '../services/users.service'],
                     var _this = this;
                     this._usersService = _usersService;
                     this.listuser = [];
-                    this.pageSize = 10;
                     this.pagedPosts = [];
                     this._usersService.getUsers()
                         .subscribe(function (users) {

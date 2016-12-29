@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxjs/operator/delay', 'rxjs/operator/mergeMap', 'rxjs/operator/switchMap', 'rxjs/Rx'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxjs/operator/delay', 'rxjs/operator/mergeMap', 'rxjs/operator/switchMap', 'rxjs', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, Rx_1;
+    var core_1, http_1, rxjs_1;
     var AskPageService;
     return {
         setters:[
@@ -24,9 +24,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
             function (_2) {},
             function (_3) {},
             function (_4) {},
-            function (Rx_1_1) {
-                Rx_1 = Rx_1_1;
-            }],
+            function (rxjs_1_1) {
+                rxjs_1 = rxjs_1_1;
+            },
+            function (_5) {}],
         execute: function() {
             AskPageService = (function () {
                 function AskPageService(http) {
@@ -41,7 +42,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
                     var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
                     return this.http.post('/askpage', body, { headers: headers }) //set up Observable and return this when function called
                         .map(function (response) { return response.json(); })
-                        .catch(function (error) { return Rx_1.Observable.throw(error.json()); });
+                        .catch(function (error) { return rxjs_1.Observable.throw(error.json()); });
                     // var headers = new Headers();
                     // headers.append('Content-Type','application/json');
                     // return this.http.post('/askpage',JSON.stringify(topic),{headers: headers})
